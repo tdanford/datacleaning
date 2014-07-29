@@ -33,8 +33,13 @@ def tuples( keys, object_stream ):
 
 def streamify( iterable ): 
 	"""
+	Turns an iterable into a generator expression; the dual of 'query'
+
 	>>> type(streamify([1, 2, 3]))
-	<type 'foo'>
+	<type 'generator'>
+
+	>>> query(streamify([1, 2, 3]))
+	[1, 2, 3]
 	"""
 	for v in iterable: 
 		yield v
